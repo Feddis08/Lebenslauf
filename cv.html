@@ -1,0 +1,310 @@
+<html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --dunkel: #98A8F8;
+        --hell: #BCCEF8;
+        --hintergrund: #ffffff;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    * {
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+    }
+
+    [triangle] {
+        width: 0;
+        height: 0;
+        border-left: 12vw solid transparent;
+        border-right: 12vw solid transparent;
+        background: var(--hintergrund);
+        border-top: 12vw solid var(--dunkel);
+    }
+
+    aside {
+        margin-left: 1vw;
+        background: var(--dunkel);
+        width: 25vw;
+        overflow: hidden;
+    }
+
+    aside [name] {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        color: var(--dunkel);
+        background: var(--hintergrund);
+        font-weight: bold;
+        font-size: 200%;
+        height: 15vw;
+    }
+
+    aside [photo] {
+        width: 25vw;
+    }
+
+    aside [row] {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        border-bottom: 1px dotted var(--hell);
+        padding: 3px;
+    }
+
+    aside [row] [icon] {
+        padding: 4px;
+        font-size: 110%;
+    }
+
+    main {
+        margin-top: 15vw;
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px solid var(--dunkel);
+    }
+
+    main [header] {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 150%;
+        font-weight: bold;
+    }
+
+    main [tabelle] [row] {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    main [tabelle] [row] [time] {
+        text-align: right;
+        min-width: 12vw;
+        max-width: 12vw;
+        border-left: 3px solid var(--dunkel);
+        padding-right: 5px;
+        margin-right: 5px;
+        margin-left: -12px;
+        background: var(--hell);
+    }
+
+    main [projekte] {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    main [projekt] {
+        padding-bottom: 5px;
+    }
+
+    main [projekt] [titel] {
+        font-weight: bold;
+    }
+
+    main [projekt] [untertitel] {
+        font-size: 80%;
+        font-style: italic;
+    }
+
+    main [projekt] [technik] {
+        font-weight: bold;
+        font-size: 70%;
+    }
+
+    main [labels] span {
+        padding-left: 5px;
+        padding-right: 5px;
+        border-right: 1px solid #c0c0c0;
+    }
+</style>
+
+<body>
+    <aside>
+        <div name><span>Felix Riemer</span></div>
+        <img photo src="https://apidyn.royalsociety.org/images/fellows/P37009-Elon-Musk.jpg" />
+        <div row><span icon>*</span><span text>2. Mai 2008</span></div>
+        <div row><span icon>@</span><span text>me@feddis08.com</span></div>
+        <div row><span icon>☎</span><span text>+43 677 62566848</span></div>
+        <div row><span icon>✉</span><span text>Stellenwiese 412<br>3400 Kierling</span></div>
+        <div row><span icon>🌎</span><span text>arckraft.feddis08.com</span></div>
+        <div row><span icon>♣</span><span text>www.feddis08.com</span></div>
+        <div triangle></div>
+    </aside>
+    <main>
+        <div header>Ueber mich</div>
+        <div text>Ich bin ein motivierter junger Junge, der gerne an seinen Projekten arbeitet und meistens fertig
+            stellt</div>
+        <div header>Schuldbildung</div>
+        <div tabelle>
+            <div row>
+                <div time>2012-2024</div>
+                <div text>Kindergarten Bruckneudorf</div>
+            </div>
+            <div row>
+                <div time>2012-2024</div>
+                <div text>Volkschule Bruck an der Leitha</div>
+            </div>
+            <div row>
+                <div time>2012-2024</div>
+                <div text>Volkschule Kierling, Klosterneuburg</div>
+            </div>
+            <div row>
+                <div time>2012-2024</div>
+                <div text>Privatgymnasium Klosterneuburg</div>
+            </div>
+        </div>
+        <div header>Weiterbildung</div>
+        <div tabelle>
+            <div row>
+                <div time>2019</div>
+                <div text>acodemy</div>
+            </div>
+        </div>
+        <div header>Projekte</div>
+        <div tabelle>
+            <div row>
+                <div time>2022</div>
+                <div projekte>
+                    <div projekt>
+                        <div titel>VideoStreamer</div>
+                        <div untertitel>Dieses Project nutzt ein Client/Server System, um auf mehreren
+                            Computern(Clients) gelichzeitig, ein Video abzuspielen. Dabei wird ein die Systemzeit, des
+                            jeweiligen Clients genutzt, um es moeglichst exat zu halten.
+                            koennen.</div>
+                        <div technik>Java, Java Socket, Java Swing</div>
+                    </div>
+                    <div projekt>
+                        <div titel>MMO-RPG_Client</div>
+                        <div untertitel>Die Client Software, mit welcher man den MC-MMO-RPG Server Steuern oder mit
+                            anderen Spielern Chatten kann. Zudem gibt es ein Konto System, dass man sich einrichten
+                            kann.</div>
+                        <div technik>Java, Java Socket, Java Swing, Hashing von Passwoertern, live Chat</div>
+                    </div>
+                    <div projekt>
+                        <div titel>DirsControll</div>
+                        <div untertitel>Ein Programm mit einer Client/Server Architektur, wo der Server der Computer der
+                            ist, auf welchem man die Verzeichnisse steuern moechte.</div>
+                        <div technik>Java, Java Socket</div>
+                    </div>
+                    <div projekt>
+                        <div titel>MC-MMO-RPG/ArkCraft</div>
+                        <div untertitel>Ein Minecraft Plugin, mit welchem man ein RPG erstellen kann. Es enhealt einige
+                            Funktionen, um es zu verwalten und zu interagieren. Dazu gibt es einen eigen Parser, der
+                            fuer die script sprache zusteandig ist.</div>
+                        <div technik>Java, SQL, JSON, eigene Script Sprache, MySQL, Discord Bot Api via JavaCord,
+                            Minecraft Spigot Api, Java Swing, Java Socket</div>
+                    </div>
+                </div>
+            </div>
+            <div row>
+                <div time>2020</div>
+                <div projekte>
+                    <div projekt>
+                        <div titel>Online Shooter</div>
+                        <div untertitel>Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen
+                            koennen</div>
+                        <div technik>JavaScript, socket.io, node.js</div>
+                    </div>
+                    <div projekt>
+                        <div titel>Online Shooter</div>
+                        <div untertitel>Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen
+                            koennen</div>
+                        <div technik>JavaScript, socket.io, node.js</div>
+                    </div>
+                </div>
+            </div>
+            <div row>
+                <div time>2019</div>
+                <div projekte>
+                    <div projekt>
+                        <div titel>Online Shooter</div>
+                        <div untertitel>Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen
+                            koennen</div>
+                        <div technik>JavaScript, socket.io, node.js</div>
+                    </div>
+                    <div projekt>
+                        <div titel>Online Shooter</div>
+                        <div untertitel>Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen
+                            koennen</div>
+                        <div technik>JavaScript, socket.io, node.js</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div header>Faehigkeiten</div>
+        <div tabelle>
+            <div row>
+                <div time>Programmier<br>sprachen</div>
+                <div labels>
+                    <span>JavaScript</span>
+                    <span>TypeScript</span>
+                    <span>Java</span>
+                    <span>C#</span>
+                    <span>Python</span>
+                    <span>LUA-Script</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+            </div>
+            <div row>
+                <div time>Anwendungen<br>Systeme</div>
+                <div labels>
+                    <span>Proxmox</span><span>PFsense</span><span>SABNzbd</span><span>MS Office</span>
+                    <span>Nginx</span>
+                    <span>Apache</span>
+                    <span>MailCow</span>
+                    <span>MySQL</span>
+                    <span>Debian</span>
+                    <span>Ubuntu</span>
+                    <span>MacOS</span>
+                    <span>Windows</span>
+                    <span>Minecraft Bukkit Server</span>
+                    <span>MS Word</span>
+                    <span>Quemu</span>
+                </div>
+            </div>
+            <div row>
+                <div time>Dev Tools</div>
+                <div labels>
+                    <span>Github</span><span>Jira</span><span>Pastebin</span>
+                    <span>Grepper</span>
+                    <span>Stackoverflow</span>
+                </div>
+            </div>
+            <div row>
+                <div time>IDEs</div>
+                <div labels>
+                    <span>Vim</span><span>Nano</span><span>Visual Code/Vim</span><span>IntelliJ IDEA/Vim</span>
+                </div>
+            </div>
+            <div row>
+                <div time>Rollen</div>
+                <div labels>
+                    <span>SysAdmin feddis08.com</span><span>Webmaster segestria.at</span><span>Owner/Developer
+                        ArkCraft/MC-MMO-RPG</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
