@@ -2,7 +2,210 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<script>
+    const draw = () => {
+        let html = "";
+        for (const year in allProjects) {
+            html += `
+                <div row>
+                    <div time>${ year }</div>
+                    <div projekte>
+            `;
+            const projectInYear = allProjects[year]; // == array of projects
+            console.log(projectInYear)
+            projectInYear.forEach(project => {
+                const status = (project.status)
+                    ? `<b>Status:</b><span>${ project.status }</span>` : '';
+                const url = (project.url)
+                    ? `<b>Url:</b><span>${ project.url }</span>` : '';
+                html += `
+                        <div projekt>
+                            <div titel>${ project.titel }</div>
+                            <div untertitel>${ project.untertitel }</div>
+                            <div info>
+                                <b>Technologie:</b><span>${ project.tech.join(",") }</span>
+                                ${ status }${ url }
+                            </div>
+                        </div>
+                `;
+                // single project
+            })
+            html += `
+                    </div>
+                </div>
+            `;
+        }
+        document.write(html);
+    }
+    const xjallProjects = {
+        "2023": [
+        ],
+    };
+
+    allProjects = {
+        "2022 4.": [
+            {
+                titel: "VideoStreamer",
+                untertitel: "Dieses Project nutzt ein Client/Server System, um auf mehreren Computern(Clients) gelichzeitig, ein Video abzuspielen. Dabei wird ein die Systemzeit, des jeweiligen Clients genutzt, um es moeglichst exat zu halten.    koennen.",
+                status: "", url: "", tech: ["Java, Java Socket, Java Swing"],
+            },
+            {
+                titel: "MMO-RPG_Client",
+                untertitel: "Die Client Software, mit welcher man den MC-MMO-RPG Server Steuern oder mit      anderen Spielern Chatten kann. Zudem gibt es ein Konto System, dass man sich einrichten kann.",
+                status: "", url: "", tech: ["Java, Java Socket, Java Swing, Hashing von Passwoertern, live Chat"],
+            },
+
+            {
+                titel: "Comic Download"
+                , untertitel: `
+                        Es nervte mich immer, als ich Comics auf meinem Computer laden wollte, so habe
+                        ich in 10 Minuten einen "comic_download" programmiert. Man gibt ihm die URL, die
+                        Seitenanzahl und ein, zwei andere Sachen auch, wie zum Beispiel einen Prefix fuer die
+                        Bilder. Danach feangt es an die Seiten herunter zu laden.
+                `
+                , status: "", url: "", tech: ["Java", "Java URL fech"]
+                , status: "finished"
+                , url: "https://github.com/Feddis08/comic_download"
+            },
+            {
+                titel: "DirsControll",
+                untertitel: "Ein Programm mit einer Client/Server Architektur, wo der Server der Computer der    ist, auf welchem man die Verzeichnisse steuern moechte.",
+                status: "", url: "", tech: ["Java, Java Socket"],
+            },
+            {
+                titel: "2D_Game",
+                untertitel: "Ein in Java programmiertes 2D Block game. Es verfuegt ueber einen Multiplayer                     und einer unendlichen Welt. Mit ganzen zwei verschiedenen Socketconnections pro Client ist ein komplett asyncroner Map und Spieler Stream moeglich. Server und Client haben als Spielarchitektur ein Tick System, welches sich automatisch syncronisiert.",
+                status: "", url: "", tech: ["Java, Java Sockets, Java Swing, GameTick Architektur"],
+            },
+            {
+                titel: "PaintEngine",
+                untertitel: "Eine Textparser, welcher ein Textfile parsed und aus den Werten in diesem ein    Bild zeichnet. In diesem sind ein paar Angaben, zu dem Bild. Dazu zaehlen: Hoehe, Breite,                 Name, und ein 2D Gitter, welches jeden Pixel in Hexadeyimal representiert.",
+                status: "", url: "", tech: ["Java, File Parsing, Java Swing"],
+            },
+            {
+                titel: "MC-MMO-RPG/ArkCraft",
+                untertitel: "Ein Minecraft Plugin, mit welchem man ein RPG erstellen kann. Es enhealt einige Funktionen, um es zu verwalten und zu interagieren. Dazu gibt es einen eigen Parser, der                 fuer die script sprache zusteandig ist.",
+                status: "", url: "", tech: ["Java, SQL, JSON, eigene Script Sprache, MySQL, Discord Bot Api via JavaCord, Minecraft Spigot Api, Java Swing, Java Socket"],
+            },
+        ],
+        "2021 3.": [
+            {
+                titel: "segestria.at - internes webhosting",
+                untertitel: "mail, portforward, dns, docker",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "Minecraft Computer mit Graphikkarte",
+                untertitel: "Redstone",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "Roblox game",
+                untertitel: "LUA",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "LUA script fuer DAoC",
+                untertitel: "LUA zum craften und Waffenwechseln",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "Netzwerk im Haus",
+                untertitel: "pfsense",
+                status: "", url: "", tech: [""],
+            },
+        ],
+        "2020 2.": [
+            {
+                titel: "Online Shooter",
+                untertitel: "Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen       koennen",
+                status: "", url: "", tech: ["JavaScript", "socket.io", "node.js"],
+            },
+            {
+                titel: "DHCP und Router in Minecraft",
+                untertitel: "",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "Minecraft server Netzwerk",
+                untertitel: "bungeecord",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "Minecraft permissions plugin",
+                untertitel: "",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "Soundsystem im Keller",
+                untertitel: "",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "Labyrinth Spiel in Scratch",
+                untertitel: "acodemy",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "2d Unity Block Experiment",
+                untertitel: "bla fah sel ",
+                status: "ongoing", url: "http://www.orf.at", tech: ["asdf", "axxx"],
+            },
+            {
+                titel: "HP Prolient/Dell server proxmox",
+                untertitel: "",
+                status: "", url: "", tech: [""],
+            },
+        ],
+        "2019 1.": [
+            {
+                titel: "Automatisiertes Aufsetzen von Minecraft servern",
+                untertitel: "bash script das java, minecraft und screen installiert und minecraft in einem screen startet",
+                status: "", url: "", tech: ["bash script"],
+            },
+            {
+                titel: "Spiel in Scratch",
+                untertitel: "acodemy",
+                status: "", url: "", tech: [""],
+            },
+        ],
+        "2018 4. VS": [
+            {
+                titel: "Wunderkind Roboter",
+                untertitel: "",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "Automatisiertes Aufsetzen von Minecraft servern",
+                untertitel: "bash script das java, minecraft und screen installiert und minecraft in  einem screen startet                        ",
+                status: "", url: "", tech: ["bash script"],
+            },
+            {
+                titel: "Alte Laptops mit Lubuntu zum Laufen gebracht",
+                untertitel: "",
+                status: "", url: "", tech: [""],
+            },
+            {
+                titel: "Eigenes Netzwerk mit altem Router",
+                untertitel: "",
+                status: "", url: "", tech: [""],
+            },
+        ],
+        "2017 3. VS": [
+            {
+                titel: "Wunderkind Roboter",
+                untertitel: "",
+                status: "", url: "", tech: [""],
+            },
+        ],
+    }
+</script>
 <style>
+    b {
+        display: block;
+    }
+
     :root {
         --dunkel: #98A8F8;
         --hell: #BCCEF8;
@@ -92,6 +295,7 @@
         align-items: start;
         padding-top: 5px;
         padding-bottom: 5px;
+        background: #efefef;
     }
 
     main [tabelle] [row] [time] {
@@ -135,6 +339,12 @@
         padding-right: 5px;
         border-right: 1px solid #c0c0c0;
     }
+
+    main [info] b {
+        font-size: 60%;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
 </style>
 
 <body>
@@ -143,8 +353,10 @@
         <img photo src="https://apidyn.royalsociety.org/images/fellows/P37009-Elon-Musk.jpg" />
         <div row><span icon>*</span><span text>2. Mai 2008</span></div>
         <div row><span icon>@</span><span text>me@feddis08.com</span></div>
-        <div row><span icon>☎</span><span text>+43 677 62566848</span></div>
-        <div row><span icon>✉</span><span text>Stellenwiese 412<br>3400 Kierling</span></div>
+        <div row><span icon>
+                <i class="fa-solid fa-phone"></i></span><span text>+43 677 62566848</span></div>
+        <div row><span icon>
+                <i class="fa-solid fa-envelope"></i></span><span text>Stellenwiese 412<br>3400 Kierling</span></div>
         <div row><span icon>🌎</span><span text>arckraft.feddis08.com</span></div>
         <div row><span icon>♣</span><span text>www.feddis08.com</span></div>
         <div triangle></div>
@@ -180,147 +392,116 @@
             </div>
         </div>
         <div header>Projekte</div>
-        <div tabelle>
-            <div row>
-                <div time>2022</div>
-                <div projekte>
-                    <div projekt>
-                        <div titel>VideoStreamer</div>
-                        <div untertitel>Dieses Project nutzt ein Client/Server System, um auf mehreren
-                            Computern(Clients) gelichzeitig, ein Video abzuspielen. Dabei wird ein die Systemzeit, des
-                            jeweiligen Clients genutzt, um es moeglichst exat zu halten.
-                            koennen.</div>
-                        <div technik>Java, Java Socket, Java Swing</div>
-                    </div>
-                    <div projekt>
-                        <div titel>comic_download</div>
-                        <div untertitel>Es nervte mich immer, als ich Comics auf meinem Computer laden wollte, so habe ich in 10 Minuten einen "comic_download" programmiert. Man gibt ihm die URL, die Seitenanzahl und ein, zwei andere Sachen auch, wie zum Beispiel einen Prefix fuer die Bilder. Danach feangt es an die Seiten herunter zu laden.</div>
-                        <div technik>Java, Java URL fetch</div>
-                    </div>
-                    <div projekt>
-                        <div titel>MMO-RPG_Client</div>
-                        <div untertitel>Die Client Software, mit welcher man den MC-MMO-RPG Server Steuern oder mit
-                            anderen Spielern Chatten kann. Zudem gibt es ein Konto System, dass man sich einrichten
-                            kann.</div>
-                        <div technik>Java, Java Socket, Java Swing, Hashing von Passwoertern, live Chat</div>
-                    </div>
-                    <div projekt>
-                        <div titel>DirsControll</div>
-                        <div untertitel>Ein Programm mit einer Client/Server Architektur, wo der Server der Computer der
-                            ist, auf welchem man die Verzeichnisse steuern moechte.</div>
-                        <div technik>Java, Java Socket</div>
-                    </div>
-                    <div projekt>
-                        <div titel>2D_Game</div>
-                        <div untertitel>Ein in Java programmiertes 2D Block game. Es verfuegt ueber einen Multiplayer und einer unendlichen Welt. Mit ganzen zwei verschiedenen Socketconnections pro Client ist ein komplett asyncroner Map und Spieler Stream moeglich. Server und Client haben als Spielarchitektur ein Tick System, welches sich automatisch syncronisiert.</div>
-                        <div technik>Java, Java Sockets, Java Swing, GameTick Architektur</div>
-                    </div>
-                    <div projekt>
-                        <div titel>PaintEngine</div>
-                        <div untertitel>Eine Textparser, welcher ein Textfile parsed und aus den Werten in diesem ein Bild zeichnet. In diesem sind ein paar Angaben, zu dem Bild. Dazu zaehlen: Hoehe, Breite, Name, und ein 2D Gitter, welches jeden Pixel in Hexadeyimal representiert.</div>
-                                <div technik>Java, File Parsing, Java Swing</div>
-                        </div>
-                        <div projekt>
-                        <div titel>MC-MMO-RPG/ArkCraft</div>
-                        <div untertitel>Ein Minecraft Plugin, mit welchem man ein RPG erstellen kann. Es enhealt einige
-                            Funktionen, um es zu verwalten und zu interagieren. Dazu gibt es einen eigen Parser, der
-                            fuer die script sprache zusteandig ist.</div>
-                        <div technik>Java, SQL, JSON, eigene Script Sprache, MySQL, Discord Bot Api via JavaCord,
-                            Minecraft Spigot Api, Java Swing, Java Socket</div>
-                    </div>
-                </div>
-            </div>
-            <div row>
-                <div time>2020</div>
-                <div projekte>
-                    <div projekt>
-                        <div titel>Online Shooter</div>
-                        <div untertitel>Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen
-                            koennen</div>
-                        <div technik>JavaScript, socket.io, node.js</div>
-                    </div>
-                    <div projekt>
-                        <div titel>Online Shooter</div>
-                        <div untertitel>Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen
-                            koennen</div>
-                        <div technik>JavaScript, socket.io, node.js</div>
-                    </div>
-                </div>
-            </div>
-            <div row>
-                <div time>2019</div>
-                <div projekte>
-                    <div projekt>
-                        <div titel>Online Shooter</div>
-                        <div untertitel>Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen
-                            koennen</div>
-                        <div technik>JavaScript, socket.io, node.js</div>
-                    </div>
-                    <div projekt>
-                        <div titel>Online Shooter</div>
-                        <div untertitel>Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen
-                            koennen</div>
-                        <div technik>JavaScript, socket.io, node.js</div>
-                    </div>
-                </div>
-            </div>
+        <div tabelle id="projekte" name="projekte">
         </div>
-        <div header>Faehigkeiten</div>
         <div tabelle>
+            <script>
+                draw();
+            </script>
             <div row>
-                <div time>Programmier<br>sprachen</div>
-                <div labels>
-                    <span>JavaScript</span>
-                    <span>TypeScript</span>
-                    <span>Java</span>
-                    <span>C#</span>
-                    <span>Python</span>
-                    <span>LUA-Script</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
+            </div>
+            <div header>Faehigkeiten</div>
+            <div tabelle>
+                <div row>
+                    <div time>Programmier<br>sprachen</div>
+                    <div labels>
+                        <span>JavaScript</span>
+                        <span>TypeScript</span>
+                        <span>Java</span>
+                        <span>C#</span>
+                        <span>Python</span>
+                        <span>LUA-Script</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+                <div row>
+                    <div time>Anwendungen<br>Systeme</div>
+                    <div labels>
+                        <span>Proxmox</span><span>PFsense</span><span>SABNzbd</span><span>MS Office</span>
+                        <span>Nginx</span>
+                        <span>Apache</span>
+                        <span>MailCow</span>
+                        <span>MySQL</span>
+                        <span>Debian</span>
+                        <span>Ubuntu</span>
+                        <span>MacOS</span>
+                        <span>Windows</span>
+                        <span>Minecraft Bukkit Server</span>
+                        <span>MS Word</span>
+                        <span>Quemu</span>
+                    </div>
+                </div>
+                <div row>
+                    <div time>Dev Tools</div>
+                    <div labels>
+                        <span>Github</span><span>Jira</span><span>Pastebin</span>
+                        <span>Grepper</span>
+                        <span>Stackoverflow</span>
+                    </div>
+                </div>
+                <div row>
+                    <div time>IDEs</div>
+                    <div labels>
+                        <span>Vim</span><span>Nano</span><span>Visual Code/Vim</span><span>IntelliJ IDEA/Vim</span>
+                    </div>
+                </div>
+                <div row>
+                    <div time>Rollen</div>
+                    <div labels>
+                        <span>SysAdmin feddis08.com</span><span>Webmaster segestria.at</span><span>Owner/Developer
+                            ArkCraft/MC-MMO-RPG</span>
+                    </div>
                 </div>
             </div>
-            <div row>
-                <div time>Anwendungen<br>Systeme</div>
-                <div labels>
-                    <span>Proxmox</span><span>PFsense</span><span>SABNzbd</span><span>MS Office</span>
-                    <span>Nginx</span>
-                    <span>Apache</span>
-                    <span>MailCow</span>
-                    <span>MySQL</span>
-                    <span>Debian</span>
-                    <span>Ubuntu</span>
-                    <span>MacOS</span>
-                    <span>Windows</span>
-                    <span>Minecraft Bukkit Server</span>
-                    <span>MS Word</span>
-                    <span>Quemu</span>
-                </div>
-            </div>
-            <div row>
-                <div time>Dev Tools</div>
-                <div labels>
-                    <span>Github</span><span>Jira</span><span>Pastebin</span>
-                    <span>Grepper</span>
-                    <span>Stackoverflow</span>
-                </div>
-            </div>
-            <div row>
-                <div time>IDEs</div>
-                <div labels>
-                    <span>Vim</span><span>Nano</span><span>Visual Code/Vim</span><span>IntelliJ IDEA/Vim</span>
-                </div>
-            </div>
-            <div row>
-                <div time>Rollen</div>
-                <div labels>
-                    <span>SysAdmin feddis08.com</span><span>Webmaster segestria.at</span><span>Owner/Developer
-                        ArkCraft/MC-MMO-RPG</span>
-                </div>
-            </div>
-        </div>
     </main>
 
+    <script>
+        /*
+        class Project {
+            name = "";
+            description = ""
+            status = null;
+            url = "";
+            tech = [];
+            constructor(description, status, url, tech) {
+                this.description = description;
+                this.status = status;
+                this.url = url;
+                this.tech = tech;
+            }
+        };
+
+        class Year {
+            projects = [];
+            year = null;
+            name = "";
+            constructor(year, name) {
+                this.year = year;
+                this.name = name;
+
+            }
+        };
+
+        var projects = [];
+
+        function add_year(year) {
+            projects.push(year);
+        };
+        function add_project(project, date) {
+            projects.forEach((year2, _) => {
+                if (date == year2.year)
+                    year2.projects.push(project);
+            });
+        }
+
+        add_year(new Year(2020, "2020 .2"));
+        add_project(new Project("osijfoso", true, "urls", ["222 ", "11"]), 2020)
+        console.log(projects);
+    */
+
+
+    </script>
 </body>
 
 </html>
