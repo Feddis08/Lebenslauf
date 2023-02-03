@@ -9,23 +9,23 @@
         for (const year in allProjects) {
             html += `
                 <div row>
-                    <div time>${ year }</div>
+                    <div time>${year}</div>
                     <div projekte>
             `;
             const projectInYear = allProjects[year]; // == array of projects
             console.log(projectInYear)
             projectInYear.forEach(project => {
                 const status = (project.status)
-                    ? `<b>Status:</b><span>${ project.status }</span>` : '';
+                    ? `<b>Status:</b><span>${project.status}</span>` : '';
                 const url = (project.url)
-                    ? `<b>Url:</b><span>${ project.url }</span>` : '';
+                    ? `<b>Url:</b><span>${project.url}</span>` : '';
                 html += `
                         <div projekt>
-                            <div titel>${ project.titel }</div>
-                            <div untertitel>${ project.untertitel }</div>
+                            <div titel>${project.titel}</div>
+                            <div untertitel>${project.untertitel}</div>
                             <div info>
-                                <b>Technologie:</b><span>${ project.tech.join(",") }</span>
-                                ${ status }${ url }
+                                <b>Technologie:</b><span>${project.tech.join(",")}</span>
+                                ${status}${url}
                             </div>
                         </div>
                 `;
@@ -48,12 +48,12 @@
             {
                 titel: "VideoStreamer",
                 untertitel: "Dieses Project nutzt ein Client/Server System, um auf mehreren Computern(Clients) gelichzeitig, ein Video abzuspielen. Dabei wird ein die Systemzeit, des jeweiligen Clients genutzt, um es moeglichst exat zu halten.    koennen.",
-                status: "", url: "", tech: ["Java, Java Socket, Java Swing"],
+                status: "finished", url: "", tech: ["Java, Java Socket, Java Swing"],
             },
             {
                 titel: "MMO-RPG_Client",
                 untertitel: "Die Client Software, mit welcher man den MC-MMO-RPG Server Steuern oder mit      anderen Spielern Chatten kann. Zudem gibt es ein Konto System, dass man sich einrichten kann.",
-                status: "", url: "", tech: ["Java, Java Socket, Java Swing, Hashing von Passwoertern, live Chat"],
+                status: "ongoing", url: "https://github.com/Feddis08/MMO-RPG_Client", tech: ["Java, Java Socket, Java Swing, Hashing von Passwoertern, live Chat"],
             },
 
             {
@@ -64,132 +64,120 @@
                         Seitenanzahl und ein, zwei andere Sachen auch, wie zum Beispiel einen Prefix fuer die
                         Bilder. Danach feangt es an die Seiten herunter zu laden.
                 `
-                , status: "", url: "", tech: ["Java", "Java URL fech"]
-                , status: "finished"
-                , url: "https://github.com/Feddis08/comic_download"
+                , status: "finished", url: "https://github.com/Feddis08/comic_download", tech: ["Java", "Java URL fech"]
             },
             {
                 titel: "DirsControll",
                 untertitel: "Ein Programm mit einer Client/Server Architektur, wo der Server der Computer der    ist, auf welchem man die Verzeichnisse steuern moechte.",
-                status: "", url: "", tech: ["Java, Java Socket"],
+                status: "finished", url: "https://github.com/Feddis08/dirs_control", tech: ["Java, Java Socket"],
             },
             {
                 titel: "2D_Game",
                 untertitel: "Ein in Java programmiertes 2D Block game. Es verfuegt ueber einen Multiplayer                     und einer unendlichen Welt. Mit ganzen zwei verschiedenen Socketconnections pro Client ist ein komplett asyncroner Map und Spieler Stream moeglich. Server und Client haben als Spielarchitektur ein Tick System, welches sich automatisch syncronisiert.",
-                status: "", url: "", tech: ["Java, Java Sockets, Java Swing, GameTick Architektur"],
+                status: "ongoing", url: "https://github.com/Feddis08/2D_Game", tech: ["Java, Java Sockets, Java Swing, GameTick Architektur"],
             },
             {
                 titel: "PaintEngine",
                 untertitel: "Eine Textparser, welcher ein Textfile parsed und aus den Werten in diesem ein    Bild zeichnet. In diesem sind ein paar Angaben, zu dem Bild. Dazu zaehlen: Hoehe, Breite,                 Name, und ein 2D Gitter, welches jeden Pixel in Hexadeyimal representiert.",
-                status: "", url: "", tech: ["Java, File Parsing, Java Swing"],
+                status: "finished", url: "https://github.com/Feddis08/PaintEngine", tech: ["Java, File Parsing, Java Swing"],
             },
             {
                 titel: "MC-MMO-RPG/ArkCraft",
                 untertitel: "Ein Minecraft Plugin, mit welchem man ein RPG erstellen kann. Es enhealt einige Funktionen, um es zu verwalten und zu interagieren. Dazu gibt es einen eigen Parser, der                 fuer die script sprache zusteandig ist.",
-                status: "", url: "", tech: ["Java, SQL, JSON, eigene Script Sprache, MySQL, Discord Bot Api via JavaCord, Minecraft Spigot Api, Java Swing, Java Socket"],
+                status: "ongoing", url: "https://github.com/Feddis08/MC-MMO-RPG", tech: ["Java, SQL, JSON, eigene Script Sprache, MySQL, Discord Bot Api via JavaCord, Minecraft Spigot Api, Java Swing, Java Socket"],
             },
         ],
         "2021 3.": [
             {
                 titel: "segestria.at - internes webhosting",
                 untertitel: "mail, portforward, dns, docker",
-                status: "", url: "", tech: [""],
+                status: "ongoing", url: "https://segestria.at/", tech: ["Linux", "Wordpress", "MySQL", "Docker"],
             },
             {
                 titel: "Minecraft Computer mit Graphikkarte",
                 untertitel: "Redstone",
-                status: "", url: "", tech: [""],
+                status: "unfinished", url: "", tech: ["Minecraft Redstone", "Binery System"],
             },
             {
                 titel: "Roblox game",
                 untertitel: "LUA",
-                status: "", url: "", tech: [""],
+                status: "finished", url: "", tech: ["LUA", "Roblox LUA"],
             },
             {
                 titel: "LUA script fuer DAoC",
                 untertitel: "LUA zum craften und Waffenwechseln",
-                status: "", url: "", tech: [""],
+                status: "finished", url: "", tech: ["LUA"],
             },
             {
                 titel: "Netzwerk im Haus",
                 untertitel: "pfsense",
-                status: "", url: "", tech: [""],
+                status: "", url: "", tech: ["Switch", "Router"],
             },
         ],
         "2020 2.": [
             {
                 titel: "Online Shooter",
                 untertitel: "Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen       koennen",
-                status: "", url: "", tech: ["JavaScript", "socket.io", "node.js"],
+                status: "finished", url: "https://github.com/Feddis08/OnlineShooter/tree/5fa0211e9b52e34be84eb74bc70e079f5c583d50", tech: ["JavaScript", "socket.io", "node.js"],
             },
             {
                 titel: "DHCP und Router in Minecraft",
-                untertitel: "",
-                status: "", url: "", tech: [""],
+                untertitel: "Ein Computer Netzwerk mit Protokol in Minectaft mit der mod OpenComputers.",
+                status: "finished", url: "https://pastebin.com/u/Feddis08", tech: ["LUA", "openComputers API", "Networking"],
             },
             {
                 titel: "Minecraft server Netzwerk",
-                untertitel: "bungeecord",
-                status: "", url: "", tech: [""],
+                untertitel: "Mit BungeeCord ein Minecraft Server Netzwerk aufgebaut. Es hat ein Zentrales Berechtigungs System.",
+                status: "finished", url: "", tech: ["Bungee Proxy", "Minecraft Server", "Central Database Systems"],
             },
             {
-                titel: "Minecraft permissions plugin",
-                untertitel: "",
-                status: "", url: "", tech: [""],
+                titel: "Minecraft plugins",
+                untertitel: "Zahlreiche Plugins auf den Minecraft Servern um diesen zu kontollieren.",
+                status: "finished", url: "", tech: [""],
             },
             {
                 titel: "Soundsystem im Keller",
-                untertitel: "",
-                status: "", url: "", tech: [""],
+                untertitel: "Ein 5.2 Lautsprecher System mit Teufel, Yamaha und Denon.",
+                status: "finished", url: "", tech: ["Lautsprecher", "Verkabelung"],
             },
             {
                 titel: "Labyrinth Spiel in Scratch",
-                untertitel: "acodemy",
-                status: "", url: "", tech: [""],
+                untertitel: "Ein Story Spiel in Scratch.",
+                status: "finished", url: "", tech: ["Scratch2"],
             },
             {
                 titel: "2d Unity Block Experiment",
-                untertitel: "bla fah sel ",
-                status: "ongoing", url: "http://www.orf.at", tech: ["asdf", "axxx"],
+                untertitel: "Ein Rechteck, welches man mit dein Pfeiltasten bewegt. Fuer diese wird die Unity PH engine genutzt.",
+                status: "finished", url: "", tech: ["Unity 3D", "VS Studio", "C#"],
             },
             {
-                titel: "HP Prolient/Dell server proxmox",
+                titel: "HP Prolient/Dell Poweregde server proxmox",
                 untertitel: "",
-                status: "", url: "", tech: [""],
+                status: "finished", url: "", tech: ["Rack Server", "Hp", "Dell", "Proxmox", "Virtualisierung"],
             },
         ],
         "2019 1.": [
             {
                 titel: "Automatisiertes Aufsetzen von Minecraft servern",
-                untertitel: "bash script das java, minecraft und screen installiert und minecraft in einem screen startet",
-                status: "", url: "", tech: ["bash script"],
-            },
-            {
-                titel: "Spiel in Scratch",
-                untertitel: "acodemy",
-                status: "", url: "", tech: [""],
-            },
+                untertitel: "Bash script das java, minecraft und screen installiert und minecraft in einem screen startet",
+                status: "finished", url: "", tech: ["bash script"],
+            }
         ],
         "2018 4. VS": [
             {
                 titel: "Wunderkind Roboter",
-                untertitel: "",
-                status: "", url: "", tech: [""],
-            },
-            {
-                titel: "Automatisiertes Aufsetzen von Minecraft servern",
-                untertitel: "bash script das java, minecraft und screen installiert und minecraft in  einem screen startet                        ",
-                status: "", url: "", tech: ["bash script"],
+                untertitel: "Ich bekam diese Roboter zum Geburtstag.",
+                status: "finished", url: "", tech: ["Block Sprache"],
             },
             {
                 titel: "Alte Laptops mit Lubuntu zum Laufen gebracht",
                 untertitel: "",
-                status: "", url: "", tech: [""],
+                status: "finished", url: "", tech: ["ISO brenner", "Laptop BIOS"],
             },
             {
                 titel: "Eigenes Netzwerk mit altem Router",
-                untertitel: "",
-                status: "", url: "", tech: [""],
+                untertitel: "Ein subnet in meinem Zimmer, dass mithilfe eines alten Routers und TP-link Powerlan betrieben wurde.",
+                status: "finished", url: "", tech: ["Router", "TP-link", "Network", "Powerlan"],
             },
         ],
         "2017 3. VS": [
