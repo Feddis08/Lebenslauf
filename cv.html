@@ -13,12 +13,11 @@
                     <div projekte>
             `;
             const projectInYear = allProjects[year]; // == array of projects
-            console.log(projectInYear)
             projectInYear.forEach(project => {
                 const status = (project.status)
                     ? `<b>Status:</b><span>${project.status}</span>` : '';
                 const url = (project.url)
-                    ? `<b>Url:</b><span>${project.url}</span>` : '';
+                    ? `<b>Url:</b><span><a href="${project.url}" target="_blank">${project.url}</a></span>` : '';
                 html += `
                         <div projekt>
                             <div titel>${project.titel}</div>
@@ -38,24 +37,41 @@
         }
         document.write(html);
     }
-    const xjallProjects = {
-        "2023": [
-        ],
-    };
 
-    allProjects = {
-        "2022 4.": [
+    const allProjects = {
+        "2023 ": [
             {
-                titel: "VideoStreamer",
+                titel: "Lebenslauf Generator",
+                untertitel: "Ein einfaches JavaScript um Projekte fuer einen Lebenslauf zu erstellen",
+                status: "finished", url: "https://github.com/f-e-s/ttb", tech: ["Angular14", "TypeScript", "CSS", "HTML"],
+            },
+            {
+                titel: "Handy Lernprogramm",
+                untertitel: "Eine Handy-app um das Ein-mal-eins und englische irregulaere Verbe zu lernen",
+                status: "ongoing", url: "https://github.com/Feddis08/Lebenslauf", tech: ["JavaScript", "CSS", "HTML"],
+            },
+            {
+                titel: "Youtube Videobeschreibungs-Scraper",
+                untertitel: "Ein Bookmarklet um eine Youtube Videobeschreibung zu scrapen und in den Zwischenspeicher fuer einen Wordpress-Event zu speichern.",
+                status: "finished", url: "https://github.com/Feddis08/xxxx", tech: ["JavaScript"],
+            },
+        ],
+        "2022 ": [
+            {
+                titel: "Video Streamer",
                 untertitel: "Dieses Project nutzt ein Client/Server System, um auf mehreren Computern(Clients) gelichzeitig, ein Video abzuspielen. Dabei wird ein die Systemzeit, des jeweiligen Clients genutzt, um es moeglichst exat zu halten.    koennen.",
                 status: "finished", url: "", tech: ["Java, Java Socket, Java Swing"],
             },
             {
-                titel: "MMO-RPG_Client",
+                titel: "Minecraft MMO-RPG (ArkCraft)",
+                untertitel: "Ein Minecraft Plugin, mit welchem man ein RPG erstellen kann. Es enhealt einige Funktionen, um es zu verwalten und zu interagieren. Dazu gibt es einen eigen Parser, der                 fuer die script sprache zusteandig ist.",
+                status: "ongoing", url: "https://github.com/Feddis08/MC-MMO-RPG", tech: ["Java, SQL, JSON, eigene Script Sprache, MySQL, Discord Bot Api via JavaCord, Minecraft Spigot Api, Java Swing, Java Socket"],
+            },
+            {
+                titel: "Minecraft MMO-RPG - Client",
                 untertitel: "Die Client Software, mit welcher man den MC-MMO-RPG Server Steuern oder mit      anderen Spielern Chatten kann. Zudem gibt es ein Konto System, dass man sich einrichten kann.",
                 status: "ongoing", url: "https://github.com/Feddis08/MMO-RPG_Client", tech: ["Java, Java Socket, Java Swing, Hashing von Passwoertern, live Chat"],
             },
-
             {
                 titel: "Comic Download"
                 , untertitel: `
@@ -67,54 +83,49 @@
                 , status: "finished", url: "https://github.com/Feddis08/comic_download", tech: ["Java", "Java URL fech"]
             },
             {
-                titel: "DirsControll",
+                titel: "Directory Control",
                 untertitel: "Ein Programm mit einer Client/Server Architektur, wo der Server der Computer der    ist, auf welchem man die Verzeichnisse steuern moechte.",
                 status: "finished", url: "https://github.com/Feddis08/dirs_control", tech: ["Java, Java Socket"],
             },
             {
-                titel: "2D_Game",
+                titel: "2D Game",
                 untertitel: "Ein in Java programmiertes 2D Block game. Es verfuegt ueber einen Multiplayer                     und einer unendlichen Welt. Mit ganzen zwei verschiedenen Socketconnections pro Client ist ein komplett asyncroner Map und Spieler Stream moeglich. Server und Client haben als Spielarchitektur ein Tick System, welches sich automatisch syncronisiert.",
                 status: "ongoing", url: "https://github.com/Feddis08/2D_Game", tech: ["Java, Java Sockets, Java Swing, GameTick Architektur"],
             },
             {
-                titel: "PaintEngine",
+                titel: "Paint Engine",
                 untertitel: "Eine Textparser, welcher ein Textfile parsed und aus den Werten in diesem ein    Bild zeichnet. In diesem sind ein paar Angaben, zu dem Bild. Dazu zaehlen: Hoehe, Breite,                 Name, und ein 2D Gitter, welches jeden Pixel in Hexadeyimal representiert.",
                 status: "finished", url: "https://github.com/Feddis08/PaintEngine", tech: ["Java, File Parsing, Java Swing"],
             },
-            {
-                titel: "MC-MMO-RPG/ArkCraft",
-                untertitel: "Ein Minecraft Plugin, mit welchem man ein RPG erstellen kann. Es enhealt einige Funktionen, um es zu verwalten und zu interagieren. Dazu gibt es einen eigen Parser, der                 fuer die script sprache zusteandig ist.",
-                status: "ongoing", url: "https://github.com/Feddis08/MC-MMO-RPG", tech: ["Java, SQL, JSON, eigene Script Sprache, MySQL, Discord Bot Api via JavaCord, Minecraft Spigot Api, Java Swing, Java Socket"],
-            },
         ],
-        "2021 3.": [
+        "2021 ": [
             {
                 titel: "segestria.at - internes webhosting",
-                untertitel: "mail, portforward, dns, docker",
-                status: "ongoing", url: "https://segestria.at/", tech: ["Linux", "Wordpress", "MySQL", "Docker"],
+                untertitel: "Eine Wordpress Seite, mit MailCow Webserver. Dabei wird Docker auf einer Debian VM genutzt. Dahinter steht ein Nginx proxy, der die Subdomains sowie HTTPS managed.",
+                status: "ongoing", url: "https://segestria.at/", tech: ["Debian", "Wordpress", "MySQL", "Docker", "DNS Records", "MailCow", "nginx proxy mit SSL"],
             },
             {
                 titel: "Minecraft Computer mit Graphikkarte",
-                untertitel: "Redstone",
+                untertitel: "Ein hablfertiger Minecraft Redstone Computer mit diversen Componenten, sowie einer Grafikkarte mit 16x16 bits an RAM, ein 16bit ROM fuer die Zeichenauswertung, 16 moegliche 8x8 Monitore. Eine Einheit, die eine Serielle uebertragung ermouglicht.",
                 status: "unfinished", url: "", tech: ["Minecraft Redstone", "Binery System"],
             },
             {
-                titel: "Roblox game",
-                untertitel: "LUA",
+                titel: "Roblox Game",
+                untertitel: "Ein Roblox LUA test, in dem ich meine Ersten Schritte in Richtung Roblox DEV gemacht habe.",
                 status: "finished", url: "", tech: ["LUA", "Roblox LUA"],
             },
             {
-                titel: "LUA script fuer DAoC",
-                untertitel: "LUA zum craften und Waffenwechseln",
+                titel: "LUA Script fuer DAoC",
+                untertitel: "LUA zum craften und Waffenwechseln.",
                 status: "finished", url: "", tech: ["LUA"],
             },
             {
                 titel: "Netzwerk im Haus",
-                untertitel: "pfsense",
-                status: "", url: "", tech: ["Switch", "Router"],
+                untertitel: "Das Heimnezt im Haus, bestand aus einer OPNSense, FriztBox und mehreren Switchen.",
+                status: "finished", url: "", tech: ["Switch", "Router"],
             },
         ],
-        "2020 2.": [
+        "2020 ": [
             {
                 titel: "Online Shooter",
                 untertitel: "Ein online browser Spiel bei dem sich zwei Spieler gegenseitig abschiessen       koennen",
@@ -126,12 +137,12 @@
                 status: "finished", url: "https://pastebin.com/u/Feddis08", tech: ["LUA", "openComputers API", "Networking"],
             },
             {
-                titel: "Minecraft server Netzwerk",
+                titel: "Minecraft Server Netzwerk",
                 untertitel: "Mit BungeeCord ein Minecraft Server Netzwerk aufgebaut. Es hat ein Zentrales Berechtigungs System.",
                 status: "finished", url: "", tech: ["Bungee Proxy", "Minecraft Server", "Central Database Systems"],
             },
             {
-                titel: "Minecraft plugins",
+                titel: "Minecraft Plugins",
                 untertitel: "Zahlreiche Plugins auf den Minecraft Servern um diesen zu kontollieren.",
                 status: "finished", url: "", tech: [""],
             },
@@ -141,29 +152,29 @@
                 status: "finished", url: "", tech: ["Lautsprecher", "Verkabelung"],
             },
             {
-                titel: "Labyrinth Spiel in Scratch",
-                untertitel: "Ein Story Spiel in Scratch.",
-                status: "finished", url: "", tech: ["Scratch2"],
-            },
-            {
                 titel: "2d Unity Block Experiment",
                 untertitel: "Ein Rechteck, welches man mit dein Pfeiltasten bewegt. Fuer diese wird die Unity PH engine genutzt.",
                 status: "finished", url: "", tech: ["Unity 3D", "VS Studio", "C#"],
             },
             {
-                titel: "HP Prolient/Dell Poweregde server proxmox",
-                untertitel: "",
+                titel: "HP Prolient/Dell Poweregde Proxmox Server",
+                untertitel: "Zwei Rack Server, die im Cluster mithilfe von der Proxmox Software liefen.",
                 status: "finished", url: "", tech: ["Rack Server", "Hp", "Dell", "Proxmox", "Virtualisierung"],
             },
         ],
-        "2019 1.": [
+        "2019 ": [
             {
-                titel: "Automatisiertes Aufsetzen von Minecraft servern",
+                titel: "Labyrinth Spiel in Scratch",
+                untertitel: "Ein Story Spiel in Scratch.",
+                status: "finished", url: "", tech: ["Scratch2"],
+            },
+            {
+                titel: "Automatisiertes Aufsetzen von Minecraft Servern",
                 untertitel: "Bash script das java, minecraft und screen installiert und minecraft in einem screen startet",
                 status: "finished", url: "", tech: ["bash script"],
             }
         ],
-        "2018 4. VS": [
+        "2018 ": [
             {
                 titel: "Alte Laptops mit Lubuntu zum Laufen gebracht",
                 untertitel: "",
@@ -175,7 +186,7 @@
                 status: "finished", url: "", tech: ["Router", "TP-link", "Network", "Powerlan"],
             },
         ],
-        "2017 3. VS": [
+        "2017 ": [
             {
                 titel: "Wunderkind Roboter",
                 untertitel: "Ich bekam diese Roboter zum Geburtstag. Ein so ein Roboter bestand aus verschiedenen einzelnen Bausteinen, die verschiedene Funktionen ueber nahmen, wie zum Beispiel einen Sensor.",
@@ -305,6 +316,8 @@
 
     main [projekt] [titel] {
         font-weight: bold;
+        font-size: 120%;
+        margin-bottom: 5px;
     }
 
     main [projekt] [untertitel] {
@@ -323,10 +336,21 @@
         border-right: 1px solid #c0c0c0;
     }
 
+    main [info] {
+        margin-bottom: 7px;
+        border-bottom: 1px dotted #c0c0c0;
+    }
+
     main [info] b {
+        display: inline;
         font-size: 60%;
         text-transform: uppercase;
         letter-spacing: 2px;
+    }
+
+    main [info] span {
+        display: inline;
+        margin-right: 5px;
     }
 </style>
 
