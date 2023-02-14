@@ -18,6 +18,7 @@
                     ? `<b>Status:</b><span>${project.status}</span>` : '';
                 const url = (project.url)
                     ? `<b>Url:</b><span><a href="${project.url}" target="_blank">${project.url}</a></span>` : '';
+                if (project.titel == "Comic Download" || project.titel == "2D Unity Block Experiment") html += "<br><br>"
                 html += `
                         <div projekt>
                             <div titel>${project.titel}</div>
@@ -399,7 +400,7 @@
 <body size="A4">
     <aside>
         <div name><span>Felix Riemer</span></div>
-        <img photo src="https://apidyn.royalsociety.org/images/fellows/P37009-Elon-Musk.jpg" />
+        <img photo src="felix.jpg" />
         <div row><i class="fa-solid fa-asterisk"></i><span text>2. Mai 2008</span></div>
         <div row><i class="fa-solid fa-at"></i><span text>me@feddis08.com</span></div>
         <div row>
